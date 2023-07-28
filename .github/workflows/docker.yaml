@@ -22,7 +22,7 @@ on:
       - main
 
 env:
-  HUB: ghcr.io/shaogd/skywalking-satellite
+  HUB: shaogd/skywalking-satellite
 
 jobs:
   build:
@@ -31,7 +31,7 @@ jobs:
     permissions:
       contents: read
       packages: write
-    timeout-minutes: 90
+    timeout-minutes: 900
     env:
       VERSION: ${{ github.sha }}
     steps:
