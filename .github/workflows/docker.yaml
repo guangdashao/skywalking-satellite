@@ -22,7 +22,7 @@ on:
       - main
 
 env:
-  HUB: ghcr.io/shaogd/skywalking-satellite
+  HUB: shaogd/skywalking-satellite
 
 jobs:
   build:
