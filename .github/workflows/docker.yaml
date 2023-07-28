@@ -22,11 +22,11 @@ on:
       - main
 
 env:
-  HUB: ghcr.io/apache/skywalking-satellite
+  HUB: ghcr.io/shaogd/skywalking-satellite
 
 jobs:
   build:
-    if: github.repository == 'apache/skywalking-satellite'
+    if: github.repository == 'guangdashao/skywalking-satellite'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -42,8 +42,8 @@ jobs:
         uses: docker/login-action@v1.10.0
         with:
           registry: ${{ env.HUB }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: shaogd
+          password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
       - name: Build docker image
         run: |
           make docker || make docker
